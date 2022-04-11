@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "admin",
+    "password": "7*4g`Q'9BJ;)yjFZ",
+    "database": "restarunt_management",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "admin",
+    "password": "7*4g`Q'9BJ;)yjFZ",
+    "database": "restarunt_management",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "admin",
+    "password": "7*4g`Q'9BJ;)yjFZ",
+    "database": "restarunt_management",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

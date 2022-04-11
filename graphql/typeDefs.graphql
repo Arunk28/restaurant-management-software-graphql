@@ -1,0 +1,66 @@
+type Query {
+  getEmployeeDetails: [Employees]
+  getFoodDetails: [Food]
+  getpops: [Pop]
+  getinvoice: [Invoice]
+  getorders: [Orders]
+  getcustomers: [Customers]
+  getfoods: [Food]
+  gettables: [Tables]
+}
+
+type Tables {
+  reserveid: ID!
+  tablenumber: Int
+  customerid: Int
+  customer: Customers
+}
+
+type Employees {
+  empid: ID!
+  name: String
+  salary: Int
+  address: String
+  designation: String
+  createddate: String
+  joiningdate: String
+}
+
+type Food {
+  fid: ID!
+  name: String
+  amount: Int
+  chef: Int
+  employee: Employees
+}
+
+type Pop {
+  popid: ID!
+  food: Food
+  invoice: Invoice
+  quantity: Int
+}
+
+type Invoice {
+  invoiceid: ID!
+  totalamount: Int
+  saledate: String
+  pop: [Pop]
+  order: [Orders]
+  customer: [Customers]
+}
+
+type Orders {
+  orderid: ID!
+  food: Food
+  quantity: Int
+  attender: Employees
+  invoice: Invoice
+}
+
+type Customers {
+  customerid: ID!
+  name: String
+  location: String
+  invoice: Invoice
+}
