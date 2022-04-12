@@ -75,6 +75,25 @@ const Query = {
   },
 };
 
+const Mutation = {
+  createEmployee: async (
+    root,
+    { empid, name, salary, joiningdate, address, designation }
+  ) => {
+    try {
+      return await employees.create({
+        name,
+        salary,
+        joiningdate,
+        address,
+        designation,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+};
+
 const Food = {
   employee: (food) => {
     return employees.findByPk(food.chef);
@@ -136,4 +155,13 @@ const Orders = {
     return employees.findByPk(order.attender);
   },
 };
-module.exports = { Query, Food, Pop, Invoice, Customers, Orders, Tables };
+module.exports = {
+  Query,
+  Food,
+  Pop,
+  Invoice,
+  Customers,
+  Orders,
+  Tables,
+  Mutation,
+};

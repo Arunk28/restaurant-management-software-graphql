@@ -8,6 +8,16 @@ type Query {
   getfoods: [Food]
   gettables: [Tables]
 }
+type Mutation {
+  createEmployee(
+    empid: Int
+    name: String
+    salary: Int
+    joiningdate: String
+    address: String
+    designation: String
+  ): Employees
+}
 
 type Tables {
   reserveid: ID!
