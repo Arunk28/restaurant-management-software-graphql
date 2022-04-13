@@ -17,6 +17,31 @@ type Mutation {
     address: String
     designation: String
   ): Employees
+
+  createCustomer(
+    customerid: Int
+    name: String
+    location: String
+    invoiceid: Int
+  ): Customers
+
+  createInvoice(invoiceid: Int, totalamount: Int, saledate: String): Invoice
+
+  createFood(fid: Int, name: String, amount: Int, chef: Int): Food
+
+  createOrder(
+    orderid: Int
+    customerid: Int
+    tableid: Int
+    foodid: Int
+    orderdate: String
+    attender: Int
+    quantity: Int
+    invoiceid: Int
+  ): Orders
+
+  createTable(reserveid: Int, tablenumber: Int, customerid: Int): Tables
+  createPop(popid: Int, fid: Int, invoiceid: Int, quantity: Int): Pop
 }
 
 type Tables {

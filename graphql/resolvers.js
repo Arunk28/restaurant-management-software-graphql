@@ -92,6 +92,91 @@ const Mutation = {
       console.log(err);
     }
   },
+  createCustomer: async (root, { customerid, name, location, invoiceid }) => {
+    try {
+      return await customers.create({
+        customerid,
+        name,
+        location,
+        invoiceid,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  createInvoice: async (root, { invoiceid, totalamount, saledate }) => {
+    try {
+      return await invoice.create({
+        invoiceid,
+        totalamount,
+        saledate,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  createFood: async (root, { fid, name, amount, chef }) => {
+    try {
+      return await food.create({
+        fid,
+        name,
+        amount,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  createOrder: async (
+    root,
+    {
+      orderid,
+      customerid,
+      tableid,
+      foodid,
+      orderdate,
+      attender,
+      quantity,
+      invoiceid,
+    }
+  ) => {
+    try {
+      return await orders.create({
+        orderid,
+        customerid,
+        tableid,
+        foodid,
+        orderdate,
+        attender,
+        quantity,
+        invoiceid,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  createTable: async (root, { reserveid, tablenumber, customerid }) => {
+    try {
+      return await table_reservation.create({
+        reserveid,
+        tablenumber,
+        customerid,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  createPop: async (root, { popid, fid, invoiceid, quantity }) => {
+    try {
+      return await pop.create({
+        popid,
+        fid,
+        invoiceid,
+        quantity,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };
 
 const Food = {
